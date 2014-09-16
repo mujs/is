@@ -17,10 +17,20 @@ define('mu.is', function () {
     return arg && isNumber(arg.length);
   };
   
+  var isObject = function (arg) {
+    return {}.toString.call(arg) === '[object Object]';
+  };
+  
+  var isFunction = function (arg) {
+    return typeof arg === 'function';
+  };
+  
   return {
     defined: isDefined,
     string: isString,
     number: isNumber,
-    array: isArrayLike
+    array: isArrayLike,
+    object: isObject,
+    function: isFunction
   };
 });
