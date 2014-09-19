@@ -13,7 +13,7 @@ define('mu.is', function () {
     return !isNaN(arg);
   };
   
-  var isArrayLike = function (arg) {
+  var isArray = function (arg) {
     return arg && isNumber(arg.length);
   };
   
@@ -29,7 +29,7 @@ define('mu.is', function () {
     defined: isDefined,
     string: isString,
     number: isNumber,
-    array: isArrayLike,
+    array: isArray,
     object: isObject,
     function: isFunction
   };
