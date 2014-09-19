@@ -10,7 +10,7 @@ define('mu.is', function () {
   };
   
   var isNumber = function (arg) {
-    return typeof arg === 'number';
+    return !isNaN(arg);
   };
   
   var isArrayLike = function (arg) {
