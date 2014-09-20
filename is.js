@@ -1,36 +1,72 @@
-define('mu.is', function () {
+define('mu.is.defined', function () {
   'use strict';
   
   var isDefined = function (arg) {
     return typeof arg !== 'undefined';
   };
   
+  return isDefined;
+});
+
+define('mu.is.string', function () {
+  'use strict';
+  
   var isString = function (arg) {
     return typeof arg === 'string';
   };
+  
+  return isString;
+});
+
+define('mu.is.number', function () {
+  'use strict';
   
   var isNumber = function (arg) {
     return !isNaN(arg);
   };
   
+  return isNumber;
+});
+
+define('mu.is.array', function () {
+  'use strict';
+  
   var isArray = function (arg) {
     return arg && isNumber(arg.length);
   };
+  
+  return isArray;
+});
+
+define('mu.is.object', function () {
+  'use strict';
   
   var isObject = function (arg) {
     return {}.toString.call(arg) === '[object Object]';
   };
   
+  return isObject;
+});
+
+define('mu.is.function', function () {
+  'use strict';
+  
   var isFunction = function (arg) {
     return typeof arg === 'function';
   };
   
+  return isFunction;
+});
+
+define('mu.is', function (require) {
+  'use strict';
+  
   return {
-    defined: isDefined,
-    string: isString,
-    number: isNumber,
-    array: isArray,
-    object: isObject,
-    function: isFunction
+    defined:  require('mu.is.isDefined'),
+    string:   require('mu.is.isString'),
+    number:   require('mu.is.isNumber'),
+    array:    require('mu.is.isArray'),
+    object:   require('mu.is.isObject'),
+    function: require('mu.is.isFunction')
   };
 });
