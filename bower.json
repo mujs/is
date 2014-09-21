@@ -1,0 +1,14 @@
+{
+  "name": "mu.is",
+  "description": "Collection of basic type checks",
+  "version": "0.1.0",
+  "main": "is.js",
+  "dependencies": {
+    "define": "*"
+  },
+  "keywords": [
+    "is",
+    "type"
+  ],
+  "license": "MIT"
+}
