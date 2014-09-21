@@ -28,8 +28,10 @@ define('mu.is.number', function () {
   return isNumber;
 });
 
-define('mu.is.array', function () {
+define('mu.is.array', function (require) {
   'use strict';
+  
+  var isNumber = require('mu.is.number');
   
   var isArray = function (arg) {
     return arg && isNumber(arg.length);
