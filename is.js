@@ -62,11 +62,11 @@ define('mu.is', function (require) {
   'use strict';
   
   return {
-    defined:  require('mu.is.isDefined'),
-    string:   require('mu.is.isString'),
-    number:   require('mu.is.isNumber'),
-    array:    require('mu.is.isArray'),
-    object:   require('mu.is.isObject'),
-    function: require('mu.is.isFunction')
+    defined:  require('mu.is.defined'),
+    string:   require('mu.is.string'),
+    number:   require('mu.is.number'),
+    array:    require('mu.is.array'),
+    object:   require('mu.is.object'),
+    function: require('mu.is.function')
   };
 });
