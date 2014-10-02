@@ -1,7 +1,7 @@
 {
   "name": "mu.is",
   "description": "Collection of basic type checks",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "is.js",
   "dependencies": {
     "define": "*"
@@ -14,7 +14,8 @@
     "number",
     "array",
     "object",
-    "function"
+    "function",
+    "scalar"
   ],
   "license": "MIT"
 }

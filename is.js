@@ -60,6 +60,22 @@ define('mu.is.function', function () {
   return isFunction;
 });
 
+define('mu.is.scalar', function () {
+  'use strict';
+
+  var isScalar = function (arg) {
+    var argType = typeof arg;
+
+    return (
+        argType === 'string' ||
+        argType === 'number' ||
+        argType === 'boolean'
+    );
+  };
+
+  return isScalar;
+});
+
 define('mu.is', function (require) {
   'use strict';
   
@@ -69,6 +85,7 @@ define('mu.is', function (require) {
     number:   require('mu.is.number'),
     array:    require('mu.is.array'),
     object:   require('mu.is.object'),
-    function: require('mu.is.function')
+    function: require('mu.is.function'),
+    scalar:   require('mu.is.scalar')
   };
 });
