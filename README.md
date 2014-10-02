@@ -3,7 +3,8 @@ is
 
 Collection of basic type checks
 
-# Usage
+Usage
+-----
 
 ```js
 var is = require('mu.is');
@@ -26,15 +27,18 @@ console.log(is.object({}));           // true
 console.log(is.object([]));           // false
 ```
 
-# Install
+Install
+-------
 
     bower install mu.is
 
-# Motivation
+Motivation
+----------
 
 Straightforward type detection with a hint of feature detection
 
-# References
+References
+----------
 
 *   [T.J. Crowder's post about types][1]
 *   [jsPerf: is-scalar][2]
