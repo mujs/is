@@ -34,7 +34,7 @@ define('mu.is.array', function (require) {
   var isNumber = require('mu.is.number');
   
   var isArray = function (arg) {
-    return arg && isNumber(arg.length);
+    return typeof arg === 'object' && isNumber(arg.length);
   };
   
   return isArray;
