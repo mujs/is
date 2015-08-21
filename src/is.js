@@ -75,17 +75,3 @@ define('mu.is.scalar', function () {
 
   return isScalar;
 });
-
-define('mu.is', function (require) {
-  'use strict';
-  
-  return {
-    defined:  require('mu.is.defined'),
-    string:   require('mu.is.string'),
-    number:   require('mu.is.number'),
-    array:    require('mu.is.array'),
-    object:   require('mu.is.object'),
-    function: require('mu.is.function'),
-    scalar:   require('mu.is.scalar')
-  };
-});
