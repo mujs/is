@@ -8,6 +8,16 @@ define('mu.is.defined', function () {
   return isDefined;
 });
 
+define('mu.is.boolean', function () {
+  'use strict';
+  
+  var isBoolean = function (arg) {
+    return typeof arg === 'boolean';
+  };
+  
+  return isBoolean;
+});
+
 define('mu.is.string', function () {
   'use strict';
   
