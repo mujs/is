@@ -18,7 +18,7 @@ console.log(is.boolean(false));       // true
 console.log(is.boolean(1));           // false
 
 console.log(is.number(2));            // true
-console.log(is.number('2'));          // true (feature detection)
+console.log(is.number('2'));          // false
 console.log(is.number('a'));          // false
 
 console.log(is.string('a'));          // true
