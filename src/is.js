@@ -32,7 +32,7 @@ define('mu.is.number', function () {
   'use strict';
   
   var isNumber = function (arg) {
-    return !isNaN(arg);
+    return typeof arg === 'number';
   };
   
   return isNumber;
