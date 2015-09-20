@@ -1,5 +1,21 @@
 {
+  "name": "is",
+  "version": "0.1.0",
+  "repository": "https://github.com/mujs/is.git",
+  "license": "MIT",
   "pkgDependencies": {
     "mujs/define": "*"
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-concat-sourcemap": "*",
+    "gulp-eslint": "*",
+    "del": "*",
+    "pfraces/pacman": "*"
+  },
+  "scripts": {
+    "update" : "npm update && pacman",
+    "lint": "gulp lint",
+    "test"  : "gulp test"
   }
 }
