@@ -2,7 +2,7 @@ define.test(function (use) {
   'use strict';
 
   var expect = require('expect.js'),
-      isDefined = use('is.defined');
+      isDefined = use('mu.is.defined');
 
   describe('is', function () {
     describe('defined', function () {
