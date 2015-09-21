@@ -7,15 +7,17 @@
     "mujs/define": "*"
   },
   "devDependencies": {
+    "del": "*",
     "gulp": "*",
     "gulp-concat-sourcemap": "*",
     "gulp-eslint": "*",
-    "del": "*",
-    "pfraces/pacman": "*"
+    "pacman": "pfraces/pacman",
+    "mocha": "*",
+    "expect.js": "*"
   },
   "scripts": {
-    "update" : "npm update && pacman",
+    "update": "npm update && pacman",
     "lint": "gulp lint",
-    "test"  : "gulp test"
+    "test": "gulp lint && mocha test/**/*.js"
   }
 }

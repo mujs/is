@@ -1,4 +1,4 @@
 # build system
 node_modules
 dependencies
-output
+dist
