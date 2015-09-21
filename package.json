@@ -1,6 +1,6 @@
 {
   "name": "is",
-  "version": "0.1.0",
+  "version": "0.6.2",
   "repository": "https://github.com/mujs/is.git",
   "license": "MIT",
   "pkgDependencies": {
@@ -12,12 +12,12 @@
     "gulp-concat-sourcemap": "*",
     "gulp-eslint": "*",
     "pacman": "pfraces/pacman",
-    "mocha": "*",
+    "gulp-mocha": "*",
     "expect.js": "*"
   },
   "scripts": {
     "update": "npm update && pacman",
     "lint": "gulp lint",
-    "test": "gulp lint && mocha test/**/*.js"
+    "test": "gulp test"
   }
 }
