@@ -26,19 +26,9 @@ gulp.task('scripts', ['lint'], function () {
     .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('test-dependencies', ['lint'], function () {
-  var src = [
-    'define/src/define.js'
-  ].map(function (path) { return 'dependencies/' + path; });
-
-  return gulp.src(src)
-    .pipe(concat('test-dependencies.js'))
-    .pipe(gulp.dest('./dist/'));
-});
-
 gulp.task('test-suite', ['scripts', 'test-dependencies'], function () {
   var src = [
-    'dist/test-dependencies.js',
+    'dependencies/define/src/define.js'
     'dist/scripts.js',
     'test/**.spec.js'
   ];
