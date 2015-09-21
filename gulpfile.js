@@ -26,7 +26,7 @@ gulp.task('scripts', ['lint'], function () {
     .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('test-suite', ['scripts', 'test-dependencies'], function () {
+gulp.task('test-suite', ['scripts'], function () {
   var src = [
     'dependencies/define/src/define.js',
     'dist/scripts.js',
