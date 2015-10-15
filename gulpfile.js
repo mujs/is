@@ -7,7 +7,7 @@ var gulp    = require('gulp'),
     del     = require('del'),
     nodeify = require('module.nodeify');
 
-gulp.task('lint', ['clean'], function () {
+gulp.task('lint', function () {
   var src = [
     './src/**/*.js',
     './test/**/*.js'
