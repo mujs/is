@@ -1,17 +1,14 @@
-var gulp   = require('gulp'),
-    concat = require('gulp-concat-sourcemap'),
-    eslint = require('gulp-eslint'),
-    mocha  = require('gulp-mocha'),
-    del    = require('del');
-
-gulp.task('clean', function () {
-  return del('dist');
-});
+var gulp    = require('gulp'),
+    eslint  = require('gulp-eslint'),
+    mocha   = require('gulp-mocha'),
+    concat  = require('gulp-concat-sourcemap'),
+    del     = require('del'),
+    nodeify = require('module.nodeify');
 
 gulp.task('lint', ['clean'], function () {
   var src = [
     './src/**/*.js',
-    './test/**.spec.js'
+    './test/**/*.js'
   ];
 
   return gulp.src(src)
@@ -20,25 +17,23 @@ gulp.task('lint', ['clean'], function () {
     .pipe(eslint.failOnError());
 });
 
-gulp.task('scripts', ['lint'], function () {
-  return gulp.src('./src/**/*.js')
-    .pipe(concat('scripts.js', { sourcesContent: true }))
-    .pipe(gulp.dest('./dist/'));
+gulp.task('clean', function () {
+  return del('dist');
 });
 
-gulp.task('test-suite', ['scripts'], function () {
-  var src = [
-    'dependencies/define/src/define.js',
-    'dist/scripts.js',
-    'test/**.spec.js'
-  ];
-
-  return gulp.src(src)
-    .pipe(concat('test-suite.js'))
-    .pipe(gulp.dest('./dist/'));
+gulp.task('nodeify', ['lint', 'clean'], function () {
+  return gulp.src('src/**/*.js')
+    .pipe(nodeify)
+    .pipe(gulp.dest('dist/node'));
 });
 
-gulp.task('test', ['test-suite'], function () {
-  return gulp.src('dist/test-suite.js')
+gulp.task('test', ['nodeify'], function () {
+  return gulp.src('test/**/*.js')
     .pipe(mocha());
+});
+
+gulp.task('dist', ['test'], function () {
+  return gulp.src('./src/**/*.js')
+    .pipe(concat('is.js', { sourcesContent: true }))
+    .pipe(gulp.dest('./dist/browser'));
 });

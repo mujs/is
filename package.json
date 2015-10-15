@@ -1,23 +1,21 @@
 {
   "name": "is",
-  "version": "0.6.2",
-  "repository": "https://github.com/mujs/is.git",
-  "license": "MIT",
   "pkgDependencies": {
-    "mujs/define": "*"
+    "mujs/module": "*"
   },
   "devDependencies": {
-    "del": "*",
     "gulp": "*",
-    "gulp-concat-sourcemap": "*",
     "gulp-eslint": "*",
-    "pacman": "pfraces/pacman",
     "gulp-mocha": "*",
-    "expect.js": "*"
+    "gulp-concat-sourcemap": "*",
+    "del": "*",
+    "module.nodeify": "mujs/module.nodeify",
+    "expect.js": "*",
+    "mockery": "*"
   },
   "scripts": {
-    "update": "npm update && pacman",
     "lint": "gulp lint",
-    "test": "gulp test"
+    "test": "gulp test",
+    "dist": "gulp dist"
   }
 }

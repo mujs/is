@@ -1,11 +1,7 @@
 {
-  "rules": {
-    "no-undef": 2
-  },
-  "globals": {
-    "require": false,
-    "describe": false,
-    "it": false,
-    "define": false
+  "extends": "eslint:recommended",
+  "env": {
+    "mocha": true,
+    "node": true
   }
 }
