@@ -18,7 +18,7 @@ describe('scalar', function () {
     mockery.registerMock('mu.is.number', is('number'));
     mockery.registerMock('mu.is.boolean', is('boolean'));
 
-    isScalar = require('../dist/node/scalar');
+    isScalar = require('../dist/scalar');
   });
 
   after(function () {

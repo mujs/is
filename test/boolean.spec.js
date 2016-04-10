@@ -2,7 +2,7 @@
 var expect = require('expect.js');
 
 describe('boolean', function () {
-  var isBoolean = require('../dist/node/boolean');
+  var isBoolean = require('../dist/boolean');
 
   it('should be a function', function () {
     expect(isBoolean).to.be.a('function');

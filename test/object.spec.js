@@ -2,7 +2,7 @@
 var expect = require('expect.js');
 
 describe('object', function () {
-  var isObject = require('../dist/node/object');
+  var isObject = require('../dist/object');
 
   it('should be a function', function () {
     expect(isObject).to.be.a('function');

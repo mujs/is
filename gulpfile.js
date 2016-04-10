@@ -1,41 +1,34 @@
 'use strict';
 
-var gulp    = require('gulp'),
-    eslint  = require('gulp-eslint'),
-    mocha   = require('gulp-mocha'),
-    concat  = require('gulp-concat-sourcemap'),
-    del     = require('del'),
-    nodeify = require('module.nodeify');
-
-gulp.task('lint', function () {
-  var src = [
-    './src/**/*.js',
-    './test/**/*.js'
-  ];
-
-  return gulp.src(src)
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failOnError());
-});
+var gulp = require('gulp');
+var del = require('del');
+var eslint = require('gulp-eslint');
+var mocha = require('gulp-mocha');
+var umdify = require('module.umdify');
 
 gulp.task('clean', function () {
   return del('dist');
 });
 
-gulp.task('nodeify', ['lint', 'clean'], function () {
-  return gulp.src('src/**/*.js')
-    .pipe(nodeify)
-    .pipe(gulp.dest('dist/node'));
+gulp.task('lint', ['clean'], function () {
+  var sources = [
+    'src/**/*.js',
+    'test/**/*.js'
+  ];
+
+  return gulp.src(sources)
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failOnError());
 });
 
-gulp.task('test', ['nodeify'], function () {
+gulp.task('umdify', ['lint'], function () {
+  return gulp.src('src/**/*.js')
+    .pipe(umdify())
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('test', ['umdify'], function () {
   return gulp.src('test/**/*.js')
     .pipe(mocha());
-});
-
-gulp.task('dist', ['test'], function () {
-  return gulp.src('./src/**/*.js')
-    .pipe(concat('is.js', { sourcesContent: true }))
-    .pipe(gulp.dest('./dist/browser'));
 });
